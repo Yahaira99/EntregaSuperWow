@@ -61,7 +61,7 @@ export default function Registro({ movimientos }) {
         <div className="divTabla">
           <table className="table tabla">
             {movimientos.map((movimiento) => (
-              < Movimiento Nombre={movimiento.Nombre} tipoMovimiento={movimiento.tipoMovimiento} Cantidad={movimiento.Cantidad} />
+              < Movimiento id={movimiento.id} Nombre={movimiento.Nombre} tipoMovimiento={movimiento.tipoMovimiento} Cantidad={movimiento.Cantidad} />
             ))}
           </table>
         </div>

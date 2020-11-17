@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./Movimiento.css";
 
-export default function Movimiento({ Nombre, tipoMovimiento, Cantidad }) {
+export default function Movimiento({ id, Nombre, tipoMovimiento, Cantidad }) {
+
+    const [estilo, setEstilo] = useState("bg-ingreso");
 
     const formatterPeso = new Intl.NumberFormat('es-CO', {
         style: 'currency',
@@ -28,7 +31,11 @@ export default function Movimiento({ Nombre, tipoMovimiento, Cantidad }) {
             </td>
             <td>{tipoMovimiento}</td>
             <td>{Nombre}</td>
-            <td>{formatterPeso.format(Cantidad)}</td>
+            <td>
+                <div className={tipoMovimiento}>
+                    {formatterPeso.format(Cantidad)}
+                </div>
+            </td>
         </tr>
 
     )
